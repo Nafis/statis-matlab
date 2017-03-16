@@ -27,9 +27,9 @@ end
 %varetude = {'Ann?e 1','Ann?e 2','Ann?e 3','Ann?e 4'};
 varnames = {'Francais', 'Maths', 'Histoire'};
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% statis_inter (X,M,D,Delta,norm,r,etunames)
+% [Co,SS,RV,W,VaP,VeP,Xcr] = statis_inter (X,M,D,Delta,norm,etunames)
 norm = 1 ;
-[Co,S,SS,RV,W,Wn,VaP,VeP] = statis_inter (X);
+[Co,SS,RV,Wn,VaP,VeP,Xcr] = statis_inter (X);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 [ Wcomp, alpha_t ] = compromis(Wn,SS,Delta,VaP,VeP,norm);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -41,7 +41,7 @@ trajectoires( X, Wn, D, VEPU, VAPU, V_pour, indnames )
 
 %%
 %% STATIS DB 2
-clear; close all; clc;
+clear all;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Load Data 2
 path_data = 'Data/'; 
@@ -73,7 +73,7 @@ D =1/size(X,1) * eye(size(X,1));
 % varnames{9}=sprintf('pelvis');
 % for t=1:size(X,3) varetude{t} = sprintf('Annee %d', t); end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[Co,S,SS,RV,W,Wn,VaP,VeP] = statis_inter (X);
+[Co,SS,RV,Wn,VaP,VeP,Xcr] = statis_inter (X);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 [ Wcomp ] = compromis(Wn,SS,Delta,VaP,VeP,norm);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
